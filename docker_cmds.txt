@@ -1,3 +1,5 @@
-docker build -t myimage .
+docker rm $(docker ps -aq)
 
-docker run -d --name mycontainer -p 80:80 myimage
+docker build -t pydockimg .
+
+docker run -d --name apicontainer -p 80:80 pydockimg
